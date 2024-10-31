@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keanu's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- JavaScript and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="tabs.js"></script>
+    <script src="gallery.js"></script>
+    <script src="home.js"></script>
+    <script src="contactForm.js"></script>
+</head>
+<body>
+
+<!-- Sidebar/Menu -->
+<nav class="sidebar">
+    <h3>Keanu Lee</h3>
+    <a href="#" class="tab-link" data-tab="home">Home</a>
+    <a href="#" class="tab-link" data-tab="resume">Resume</a>
+    <a href="#" class="tab-link" data-tab="games">Games</a>
+    <a href="#" class="tab-link" data-tab="travel">Travel</a>
+    <a href="#" class="tab-link" data-tab="trivia">Trivia</a>
+    <a href="#" class="tab-link" data-tab="contact">Contact Me</a>
+</nav>
+
+<!-- Main Content -->
+<div class="content">
+    <!-- Home Tab Content -->
+    <div id="home" class="tab-content">
+        <div class="home-box">
+            <img src="Screenshot (172).png" alt="Keanu Lee" style="width:200px; height:auto;">
+            <h1>Welcome to my Personal Portfolio</h1>
+            <p>Hello! I’m Keanu Lee, a dedicated Information Technology - Cybersecurity major. I have a passion for learning new technologies and tackling exciting challenges.</p>
+        </div>
+    </div>
+
+    <!-- Resume Tab Content -->
+    <div id="resume" class="tab-content">
+        <h2>Resume</h2>
+        <div class="resume-box">
+            <h3>Keanu Lee</h3>
+            <p>South Plainfield, NJ | (908) 472-9467 | klee@kean.edu</p>
+            <h3>Links</h3>
+            <p><a href="https://github.com/Keanu-ux" target="_blank">GitHub: Keanu-ux</a></p>
+            <h3>Experience</h3>
+            <p><strong>Gas Attendant</strong> at Quick Check, Piscataway, NJ<br> July 2021 - Present<br>
+               - Excellent written and verbal communication skills.<br>
+               - Handling cash and transactions, maintaining records of fuel sales.<br>
+               - Stocking gasoline pumps with fuel, restocking shelves and other gas station items.</p>
+            <p><strong>Sales Associate</strong> at Kohl’s, South Plainfield, NJ<br> March 2018 - January 2020<br>
+               - Handling cash and transactions.<br>
+               - Stocking and receiving merchandise.<br>
+               - Aiding customers and staying updated with sales trends.</p>
+            <h3>Education</h3>
+            <p><strong>Kean University</strong>, Bachelor’s in IT, Cyber Security<br> Expected Graduation: 2026<br>
+               Relevant Courses: Web Client-Side, IT Database, Unix Linux</p>
+            <p><strong>Middlesex College</strong>, Associate’s Degree in Liberal Arts<br> Graduation: 2022<br>
+               Relevant Courses: Intro to Programming, Intro to Game Design, Intro to Web Design</p>
+            <h3>Skills & Abilities</h3>
+            <p>Languages: Java, HTML, UNIX<br> Technologies: iOS, Linux, Windows<br>
+               Certifications: Excel Essential Training, Windows 10 Essential Training, Relational Databases</p>
+               <p>You can download my full resume <a href="newresume.pdf" download>here</a>.</p>
+
+
+        </div>
+    </div>
+
+    <!-- Games Tab Content -->
+    <div id="games" class="tab-content">
+        <h2>Games</h2>
+        <div class="games-box">
+            <a href="number-guessing.html" target="_blank">Play Number Guessing Game</a>
+            <a href="tic-tac-toe.html" target="_blank">Play Halloween Tic Tac Toe</a>
+            <a href="rock-paper-scissors.html" target="_blank">Play Rock, Paper, Scissors</a>
+        </div>
+    </div>
+
+    <!-- Travel Tab Content -->
+    <div id="travel" class="tab-content">
+        <h2>Traveling with Family</h2>
+        <div class="gallery-container">
+            <button id="prev-arrow">&#10094;</button>
+            <img id="gallery-image" src="image_50725377.JPG" alt="Travel Photo" style="width:100%; height:auto;">
+            <button id="next-arrow">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Trivia Chatbox Tab -->
+    <div id="trivia" class="tab-content">
+        <h2>AI Trivia Chat</h2>
+        <div class="chatbox-container">
+            <div id="chatbox">
+                <div class="message bot-message">Welcome to AI Trivia! Type "start" to begin the trivia game.</div>
+            </div>
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Type your answer here..." />
+                <button id="send-message">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Me Tab -->
+    <div id="contact" class="tab-content">
+        <h2>Contact Me</h2>
+        <div class="contact-info-box">
+            <h3>My Contact Info:</h3>
+            <p>Email: <a href="mailto:klee@kean.edu">klee@kean.edu</a></p>
+            <p>Phone: <a href="tel:9084729467">908-472-9467</a></p>
+        </div>
+        <div class="contact-form-wrapper">
+            <h3>Send me a message:</h3>
+            <form id="contact-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="user_name" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="user_email" required><br>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea><br>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <h1>Keanu Lee</h1>
+    <div class="footer-tabs">
+        <a href="#" class="tab-link" data-tab="home">Home</a>
+        <a href="#" class="tab-link" data-tab="resume">Resume</a>
+        <a href="#" class="tab-link" data-tab="games">Games</a>
+        <a href="#" class="tab-link" data-tab="travel">Travel</a>
+        <a href="#" class="tab-link" data-tab="trivia">Trivia</a>
+        <a href="#" class="tab-link" data-tab="contact">Contact Me</a>
+    </div>
+    <div class="social-icons">
+        <a href="https://app.joinhandshake.com/profiles/46305091" target="_blank">
+            <img src="images/handshake-icon.png" alt="Handshake">
+        </a>
+        <a href="https://www.instagram.com/p/Cv2iKomOx8LF22MYr_YQBPvaCaxb35agiLt13Y0/?img_index=1" target="_blank">
+            <img src="images/instagram-icon.png" alt="Instagram">
+        </a>
+        <a href="https://www.twitch.tv/usecodechicken45" target="_blank">
+            <img src="images/twitch-icon.png" alt="Twitch">
+        </a>
+    </div>
+    <div class="copyright">
+        © Keanu Lee. All rights reserved.
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Courier, sans-serif; 
+            background-image: url('https://parade.com/.image/t_share/MTkxODAzMzc2MzE1NDA5OTA2/ghoul-halloween-monster.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: black;
+            color: #f0f0f0;
+            text-align: center;
+            transition: background-color 0.5s; /* Transition for flashing effect */
+        }
+        h1 {
+            color: rgb(243, 44, 44);
+            font-weight: 900;
+            font-size: 50px; /* Bigger font size */
+            margin-top: 10px;
+        }
+        h2 {
+            color: rgb(243, 44, 44);
+            font-weight: 900;
+            font-size: 30px;
+            margin-top: 10px;
+            margin-bottom: 50px; /* Larger space between heading and input field */
+        }
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px; /* Increased margin to push it to the middle */
+        }
+        input[type="number"] {
+            padding: 20px 50px; /* Increased padding for a larger input box */
+            font-size: 26px; /* Larger font size */
+            width: 350px; /* Wider input field */
+        }
+        button {
+            padding: 15px 40px;
+            font-size: 22px; /* Slightly larger button font size */
+            cursor: pointer;
+            color: rgb(243, 44, 44);
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: rgb(243, 44, 44);
+            color: #fff;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 30px; /* Further increased font size for result feedback */
+            font-weight: bolder;
+            color: red; /* Set text color to red */
+        }
+        footer {
+            margin-top: auto;
+            padding-bottom: 20px;
+        }
+        footer h3 {
+            font-weight: bold;
+            font-size: 30px;
+            color: rgb(211, 18, 18);
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Number Guessing Game</h1>
+    <h2>Guess a number between 1 and 100</h2>
+
+    <div class="game-container">
+        <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100">
+        <button onclick="checkGuess()">Guess</button>
+        <div id="result"></div>
+    </div>
+
+    <audio id="laughSound" src="creepy-laugh.mp3"></audio> <!-- Add your sound file here -->
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 100
+        let attempts = 0;
+
+        function checkGuess() {
+            const guess = Number(document.getElementById('guessInput').value);
+            const resultDiv = document.getElementById('result');
+
+            if (guess < 1 || guess > 100) {
+                resultDiv.innerHTML = 'Please enter a number between 1 and 100.';
+                resultDiv.style.color = 'red'; // Keep the text color red for error messages
+                return;
+            }
+
+            attempts++;
+            
+            if (guess === randomNumber) {
+                resultDiv.innerHTML = `Congratulations! You guessed the number in ${attempts} attempts!`;
+                document.getElementById('laughSound').play(); // Play the creepy laugh
+                flashScreen(); // Flash the screen
+                // Randomize the number again after a correct guess
+                randomNumber = Math.floor(Math.random() * 100) + 1;
+                attempts = 0; // Reset attempts for the new number
+            } else if (guess < randomNumber) {
+                resultDiv.innerHTML = 'Too low! Try again.';
+            } else {
+                resultDiv.innerHTML = 'Too high! Try again.';
+            }
+        }
+
+        function flashScreen() {
+            document.body.style.backgroundColor = 'yellow'; // Change color to yellow for flash
+            setTimeout(() => {
+                document.body.style.backgroundColor = 'black'; // Change back to original color
+            }, 200); // Flash duration
+        }
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <h3>&copy; 2024 Number Guessing Game</h3>
+            <h3>Created by:Keanu Lee</h3>
+        </div>
+    </footer>
+</body>
+<audio id="laughSound" src="creepy-laugh.mp3"></audio> <!-- Add your sound file here -->
+
+</html>

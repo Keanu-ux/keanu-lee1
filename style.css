@@ -1,0 +1,382 @@
+/* General Reset */
+body, h1, h2, h3, h4, h5 {
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #111;
+    padding-top: 20px;
+}
+
+.sidebar h3 {
+    text-align: center;
+    color: #ff6600;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #f0f0f0;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #ff6600;
+    color: #fff;
+}
+
+/* Main Content Area */
+.content {
+    margin-left: 250px;
+    padding: 30px;
+    padding-bottom: 150px; /* Enough space for the footer */
+    flex: 1;
+}
+
+h1, h2 {
+    color: #ff6600;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+/* Home Box Styling */
+.home-box {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.home-box h1 {
+    font-size: 40px;
+}
+
+.home-box p {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Resume Box Styling */
+.resume-box {
+    background-color: #262626;
+    border: 2px solid #ff6600;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    color: #f0f0f0;
+}
+
+.resume-box h3 {
+    color: #ff6600;
+    margin-top: 10px;
+}
+
+.resume-box p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.resume-box a {
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.resume-box a:hover {
+    text-decoration: underline;
+}
+
+/* Games Section Styling */
+.games-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.games-box a {
+    display: block;
+    width: 300px;
+    padding: 20px;
+    margin: 15px 0;
+    font-size: 24px;
+    background-color: #262626;
+    border: 2px solid #ff6600;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.games-box a:hover {
+    background-color: #ff6600;
+    transform: scale(1.05);
+}
+
+/* Travel Section */
+.tab-content img {
+    width: 800px;
+    height: 800px;
+    object-fit: cover;
+}
+
+/* Contact Form Styling */
+.contact-info-box {
+    background-color: #262626;
+    border: 2px solid #ff6600;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.contact-form-wrapper {
+    background-color: #262626;
+    border: 2px solid #ff6600;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.contact-form-wrapper h3 {
+    color: #ff6600;
+    margin-bottom: 20px;
+}
+
+.contact-form-wrapper input, .contact-form-wrapper textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #111;
+    color: #fff;
+}
+
+.contact-form-wrapper button {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form-wrapper button:hover {
+    background-color: #ff3300;
+}
+
+/* Footer Styling */
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0a0a23;
+    padding: 40px 0;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.footer h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer .footer-tabs {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.footer .footer-tabs a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .footer-tabs a:hover {
+    color: #ff6600;
+}
+
+.footer .social-icons {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.footer .social-icons img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.footer .social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer .copyright {
+    font-size: 12px;
+    margin-top: 20px;
+    color: #fff;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 600px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar a {
+        float: left;
+        text-align: left;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .footer h1 {
+        font-size: 28px;
+    }
+
+    .footer .footer-tabs {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Trivia Chatbox Styling */
+.chatbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#chatbox {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    background-color: #262626;
+    border: 2px solid #ff6600;
+    border-radius: 10px;
+    padding: 20px;
+    overflow-y: scroll;
+    color: #fff;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.bot-message {
+    background-color: #444;
+    text-align: left;
+}
+
+.user-message {
+    background-color: #ff6600;
+    text-align: right;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#user-input {
+    width: 80%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid #333;
+    background-color: #111;
+    color: #fff;
+}
+
+#send-message {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#send-message:hover {
+    background-color: #ff3300;
+}
+.gallery-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+#gallery-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#prev-arrow, #next-arrow {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+#prev-arrow {
+    left: 0;
+}
+
+#next-arrow {
+    right: 0;
+}
+
